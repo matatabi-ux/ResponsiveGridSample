@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<app-setting first-run="true">
+  <photo id="001" image="http://farm7.staticflickr.com/6049/5877556959_3830b74c14.jpg" title="ragdoll" owner="Corin@ 2008"/>
+  <photo id="002" image="http://farm7.staticflickr.com/6030/5901596883_6b8149eec0.jpg" title="finn" owner="Corin@ 2008"/>
+  <photo id="003" image="http://farm8.staticflickr.com/7283/9467535587_4ff7d1460c.jpg" title="Cat served on a silver platter" owner="Kent Wang"/>
+  <photo id="004" image="http://farm4.staticflickr.com/3561/3402969118_735c1f9f41.jpg" title="Easter Cat" owner="L'eau Bleue"/>
+  <photo id="005" image="http://farm8.staticflickr.com/7161/6827904859_4d91099447.jpg" title="IMG_0412e" owner="lutramania"/>
+  <photo id="006" image="http://farm6.staticflickr.com/5132/5428534488_fc7b29db74.jpg" title="DSC_0684" owner="Aya.H"/>
+  <photo id="007" image="http://farm6.staticflickr.com/5473/9156600997_7ddc7ddb9f.jpg" title="Argyle" owner="Kent Wang"/>
+  <photo id="008" image="http://farm5.staticflickr.com/4066/4601451359_4ff5f9228b.jpg" title="sasi is 1 today" owner="stumayhew"/>
+  <photo id="009" image="http://farm3.staticflickr.com/2845/9467539183_b1a9229d54.jpg" title="Cat served on a silver platter" owner="Kent Wang"/>
+  <photo id="010" image="http://farm8.staticflickr.com/7409/9467537173_9c7ca4891d.jpg" title="Cat served on a silver platter" owner="Kent Wang"/>
+  <photo id="011" image="http://farm4.staticflickr.com/3682/9156599179_619c7a2565.jpg" title="Argyle" owner="Kent Wang"/>
+  <photo id="012" image="http://farm8.staticflickr.com/7317/9156596715_4f9b370716.jpg" title="Paisley" owner="Kent Wang"/>
+  <photo id="013" image="http://farm8.staticflickr.com/7281/9158819310_9154e16eb0.jpg" title="Amongst the herbs" owner="Kent Wang"/>
+  <photo id="014" image="http://farm6.staticflickr.com/5486/9156592947_70c391abda.jpg" title="Amongst the herbs" owner="Kent Wang"/>
+  <photo id="015" image="http://farm4.staticflickr.com/3778/9156591115_8361217fa7.jpg" title="Rooftop garden" owner="Kent Wang"/>
+  <photo id="016" image="http://farm3.staticflickr.com/2883/9158814452_28a5d3f00b.jpg" title="Rooftop garden" owner="Kent Wang"/>
+  <photo id="017" image="http://farm4.staticflickr.com/3771/9156588173_bfd30d4d5f.jpg" title="Rooftop garden" owner="Kent Wang"/>
+  <photo id="018" image="http://farm4.staticflickr.com/3817/9156585583_851e5a81b0.jpg" title="Rooftop garden" owner="Kent Wang"/>
+  <photo id="019" image="http://farm4.staticflickr.com/3773/9158808552_11028f2db2.jpg" title="This box ain't big enough for both of us" owner="Kent Wang"/>
+  <photo id="020" image="http://farm6.staticflickr.com/5450/9156582727_df3ca2f449.jpg" title="Argyle &amp; Paisley" owner="Kent Wang"/>
+</app-setting>

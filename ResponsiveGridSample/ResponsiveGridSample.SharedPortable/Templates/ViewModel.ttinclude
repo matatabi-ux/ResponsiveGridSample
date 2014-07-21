@@ -1,0 +1,111 @@
+<# if (!string.IsNullOrEmpty(this.Description)) { #>
+    /// <summary>
+    /// <#= this.Description #> のインタフェース
+    /// </summary>
+<# } #>
+    public partial interface I<#= this.ClassName #>
+    {
+<# if (this.Properties != null) {
+        foreach(var property in this.Properties) { #>
+        <#= property.TypeName #> <#=property.PropertyName #> { get; set; }
+<#      }
+    }
+#>    }
+
+<# if (!string.IsNullOrEmpty(this.Description)) { #>
+    /// <summary>
+    /// <#= this.Description #>
+    /// </summary>
+<# } #>
+<# if (this.Attribute != null) { #>
+    <#= this.Attribute #>
+<# } #>
+    public partial class <#= this.ClassName #> : ViewModelBase, I<#= this.ClassName #>
+    {
+<# if (this.Properties != null) {
+        foreach(var property in this.Properties) { #>
+        #region <#= property.PropertyName #>:<#= property.DisplayName #> プロパティ
+<# if (!string.IsNullOrEmpty(property.DisplayName)) { #>
+        /// <summary>
+        /// <#= property.DisplayName #>
+        /// </summary>
+<# } #>
+        private <#= property.TypeName #> <#= property.FieldName #>; 
+
+<# if (!string.IsNullOrEmpty(property.DisplayName)) { #>
+        /// <summary>
+        /// <#= property.DisplayName #> の変更前の処理
+        /// </summary>
+<# } #>
+        partial void On<#= property.PropertyName #>Changing(ref <#= property.TypeName #> value);
+
+<# if (!string.IsNullOrEmpty(property.DisplayName)) { #>
+        /// <summary>
+        /// <#= property.DisplayName #> の変更後の処理
+        /// </summary>
+<# } #>
+        partial void On<#= property.PropertyName #>Changed();
+
+<# if (!string.IsNullOrEmpty(property.DisplayName)) { #>
+        /// <summary>
+        /// <#= property.DisplayName #> の取得および設定
+        /// </summary>
+<# } #>
+<# if (property.Attribute != null) { foreach(var attribute in property.Attribute) {#>
+        <#= attribute #>
+<# } } #>
+        public <#= property.TypeName #> <#=property.PropertyName #>
+        {
+            get
+            {
+                return this.<#= property.FieldName #>;
+            }
+
+            set
+            {
+                if (this.<#= property.FieldName #> != value)
+                {
+                    this.On<#= property.PropertyName #>Changing(ref value);
+                    this.SetProperty<<#= property.TypeName #>>(ref this.<#= property.FieldName #>, value);
+                    this.On<#= property.PropertyName #>Changed();
+                }
+            }
+        }
+        #endregion //<#= property.PropertyName #>:<#= property.DisplayName #> プロパティ
+
+<#      }
+    } #>    }
+<#+
+    public class Property
+    {
+        public string FieldName { get; set; }
+        public string PropertyName { get; set; }
+        public string TypeName { get; set; }
+        public string DisplayName { get; set; }
+        public string[] Attribute { get; set; }
+
+		public Property(string name, string type, string displayName = "", params  string[] attribute)
+        {
+            var textInfo =  System.Globalization.CultureInfo.CurrentCulture.TextInfo;
+
+			this.FieldName = textInfo.ToLower(name.FirstOrDefault()) + name.Substring(1);
+			this.PropertyName =  textInfo.ToUpper(name.FirstOrDefault()) + name.Substring(1);
+			this.TypeName = type;
+			this.DisplayName = displayName;
+			this.Attribute = attribute;
+        }
+    }
+
+    public string ClassName { get; set; }
+    public Property[] Properties { get; set; }
+    public string Description { get; set; }
+    public string Attribute { get; set; }
+
+    public void Generate(string className, Property[] properties, string description = "", string attribute = "")
+    {
+        this.ClassName = className;
+        this.Properties = properties;
+        this.Description = description;
+        this.Attribute = attribute;
+    }
+#>
